@@ -29,7 +29,7 @@ nreps = 20;
 maxiter = 50;
 
 [t, Best_ranking, AUC_ranking,b,signobj,ranking, final_values, AUCs] = ranking_analysis(data_dir,...
-    acquisition_names_citation, objectives, acquisition_funs , nreps, maxiter, [], [], 'max', 'score');
+    acquisition_names_citation, objectives, acquisition_funs , nreps, [], [], 'max', 'score');
 
 table2latex(t,[figure_folder,'PBO_benchmarks_results'])
 

@@ -67,8 +67,8 @@ rng(1)
 nsamples = 4;
 
 KSSx = kernelselfsparring_tour(theta, xtrain, ctrain, model, post, approximation, nsamples);
-MVTx = MVT(theta, xtrain, ctrain, model, post, approximation, nsamples);
-x1 = MVTx(1);
+batch_MUCx = batch_MUC(theta, xtrain, ctrain, model, post, approximation, nsamples);
+x1 = batch_MUCx(1);
 
 
  
@@ -98,14 +98,14 @@ set(gca,'YTick', linspace(min(ytick), max(ytick), 3), 'Fontsize', Fontsize)
 text(legend_pos(1), legend_pos(2),['$\bf{', letters(i), '}$'],'Units','normalized','Fontsize', letter_font)
 box off
 s1 = scatter(KSSx , normcdf(g_grid(KSSx)- g_grid(x1)), 10*markersize, C(1,:), '+','LineWidth',1.5); hold on;
-s2 = scatter(MVTx , normcdf(g_grid(MVTx)- g_grid(x1)), 10*markersize, C(2,:), '+','LineWidth',1.5); hold on;
+s2 = scatter(batch_MUCx , normcdf(g_grid(batch_MUCx)- g_grid(x1)), 10*markersize, C(2,:), '+','LineWidth',1.5); hold on;
 
 legend([p3, p2, p1, s1, s2], '$P(x>x_1)$', '$p(\Phi[g(x,x_1)]|\mathcal{D})$', '$\mu_c(x,x_1)$', 'KernelSelfSparring', 'MUC','NumColumns',2)
 legend box off
 
 nsamples = 25;
 KSSx = kernelselfsparring_tour(theta, xtrain(:,1:ntr), ctrain(1:ntr), model, post, approximation, nsamples);
-MVTx = MVT(theta, xtrain(:,1:ntr), ctrain(1:ntr), model, post, approximation, nsamples);
+batch_MUCx = batch_MUC(theta, xtrain(:,1:ntr), ctrain(1:ntr), model, post, approximation, nsamples);
   text(legend_pos(1), legend_pos(2),['$\bf{', letters(i), '}$'],'Units','normalized','Fontsize', letter_font)
 
 nexttile();
@@ -120,7 +120,7 @@ set(gca,'YTick', linspace(min(ytick), max(ytick), 3), 'Fontsize', Fontsize)
 text(legend_pos(1), legend_pos(2),['$\bf{', letters(i), '}$'],'Units','normalized','Fontsize', letter_font)
 box off
 s1 = scatter(KSSx , normcdf(g_grid(KSSx)- g_grid(x1)), 10*markersize, C(1,:), '+','LineWidth',1.5); hold on;
-s2 = scatter(MVTx , normcdf(g_grid(MVTx)- g_grid(x1)), 10*markersize, C(2,:), '+','LineWidth',1.5); hold on;
+s2 = scatter(batch_MUCx , normcdf(g_grid(batch_MUCx)- g_grid(x1)), 10*markersize, C(2,:), '+','LineWidth',1.5); hold on;
 
 legend([p3, p2, p1, s1, s2], '$P(x>x_1)$','$p(\Phi[g(x,x_1)]|\mathcal{D})$', '$\mu_c(x,x_1)$', 'KernelSelfSparring', 'MUC','NumColumns',2)
 legend box off

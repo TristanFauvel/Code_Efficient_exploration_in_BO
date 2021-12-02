@@ -4,8 +4,9 @@ add_bo_module;
 close all
 
 
-acquisition_funs = {'bivariate_EI','Dueling_UCB','EIIG','random_acquisition_pref','kernelselfsparring','maxvar_challenge','Brochu_EI', 'Thompson_challenge','DTS'};
-
+acquisition_funs = {'bivariate_EI','Dueling_UCB','EIIG','random_acquisition_pref','kernelselfsparring','MUC','Brochu_EI', 'Thompson_challenge','DTS'};
+ 
+acquisition_funs = {'Dueling_UCB_Phi'};
 maxiter = 80;
 nreplicates = 40; 
 
@@ -14,9 +15,12 @@ ninit = 5;
 nopt = 5;
 nacq = numel(acquisition_funs);
 rescaling = 1;
+
+pathname = cd;
 data_dir =  [pathname,'/Data/Data_PBO/'];
 
 
+    load('benchmarks_table.mat')
 
 objectives = benchmarks_table.fName;
 

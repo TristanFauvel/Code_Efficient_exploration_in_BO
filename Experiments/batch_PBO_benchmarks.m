@@ -4,7 +4,7 @@ close all
 pathname = '..';
 data_dir =  [pathname,'/Data/Data_batch_PBO/'];
 
-acquisition_funs = {'MVT','kernelselfsparring_tour','random_acquisition_tour'};
+acquisition_funs = {'batch_MUC','kernelselfsparring_tour','random_acquisition_tour'};
 
 maxiter =30;  %total number of iterations  
 nreplicates = 30; 

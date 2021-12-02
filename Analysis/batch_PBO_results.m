@@ -10,7 +10,7 @@ objectives = benchmarks_table.fName;
 objectives_names = benchmarks_table.Name;
 nobj =numel(objectives);
 
-acq_funs = {'random_acquisition_tour','kernelselfsparring_tour','MVT'};
+acq_funs = {'random_acquisition_tour','kernelselfsparring_tour','batch_MUC'};
 
  load('Acquisition_funs_table','T')
 acquisition_funs = cellstr(char(T(any(T.acq_funs == acq_funs,2),:).acq_funs));

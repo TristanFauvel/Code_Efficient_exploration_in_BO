@@ -3,7 +3,7 @@
 
 >This software is distributed under the MIT License. Please refer to the file LICENCE.txt included for details
 
-This is the Matlab code to replicate the results in the paper. It requires the **GP_toolbox** (https://github.com/TristanFauvel/GP_toolbox) and the **BO_toobox** (https://github.com/TristanFauvel/BO_toolbox).
+This is the Matlab code to replicate the results in the paper  	arXiv:2110.09361. It requires the **GP_toolbox** (https://github.com/TristanFauvel/GP_toolbox) and the **BO_toobox** (https://github.com/TristanFauvel/BO_toolbox).
 
 
 ## Numerical experiments

@@ -4,7 +4,20 @@ figure_folder = [pathname,'/Preference_Based_BO/Figures/'];
 figname =  'TBO_scores_benchmarks';
 
  
-acq_funs = {'random_acquisition_tour','kernelselfsparring_tour','batch_MUC'};
+
+ 
+settings= load([pathname, '/Experiments_parameters.mat'],'Experiments_parameters');
+settings = settings.Experiments_parameters;
+settings = settings({'batch_PBO'},:);
+
+% List of acquisition functions tested in the experiment
+all_acq_funs = settings.acquisition_funs{:};
+maxiter = settings.maxiter;
+nreplicates = settings.nreplicates;
+task =  settings.task{:};
+identification = settings.identification{:};
+
+
 
 load('/home/tfauvel/Documents/BO_toolbox/Acquisition_funs_table','T')
 acquisition_funs = cellstr(char(T(any(T.acq_funs == acq_funs,2),:).acq_funs)); 
@@ -18,8 +31,7 @@ objectives = benchmarks_table.fName; %; 'Ursem_waves';'forretal08'; 'camel6';'go
 objectives_names = benchmarks_table(any(benchmarks_table.fName == objectives',2),:).Name; 
 nobj =numel(objectives);
 
-nreps = 30;  
-maxiter = 30;
+
 feedback ='all';  %'all' 
 suffix = ['_',feedback];
 score_measure = 'score';

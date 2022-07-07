@@ -12,6 +12,12 @@ addpath(genpath([fileparts(pathname), '/BO_toolbox',suffix]))
 ExpName= {'BBO'; 'PBO'; 'batch_PBO'; 'sensitivity_BBO'};
 maxiter =  [100;60;30;60]; % Number of iterations
 nreplicates = [20;60;30;60]; % Number of experiments replicates;
+
+%%
+% maxiter =  [10;10;10;10]; % Number of iterations
+% nreplicates = [1;1;1;1]; % Number of experiments replicates;
+
+%%
 rescaling = logical([1;1;1;1]); % Whether or not to rescale objective functions
 nopt = [5;5;5;5]; % Number of time steps before starting using acquisition functions
 ninit = [5;5;5;5]; % Number of time steps before updating hyperparameters
@@ -44,7 +50,6 @@ PBO_benchmarks(pathname)
 BBO_benchmarks(pathname)
 batch_PBO_benchmarks(pathname)
 sensitivity_analysis_BBO(pathname)
-sensitivity_analysis_PBO
 
 uncertainty(pathname)
 BBO_results(pathname)

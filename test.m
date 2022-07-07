@@ -41,10 +41,9 @@ save([pathname, '/Experiments_parameters.mat'],'Experiments_parameters')
 
 %%
 PBO_benchmarks(pathname)
-BBO_benchmarks(pathname)
-batch_PBO_benchmarks(pathname)
-sensitivity_analysis_BBO(pathname)
-sensitivity_analysis_PBO
+% BBO_benchmarks(pathname)
+% batch_PBO_benchmarks(pathname)
+% sensitivity_analysis_BBO(pathname)
 
 uncertainty(pathname)
 BBO_results(pathname)

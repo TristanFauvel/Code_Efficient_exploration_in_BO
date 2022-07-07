@@ -32,7 +32,8 @@ hyps.ncov_hyp =2; % number of hyperparameters for the covariance function
 hyps.nmean_hyp =1; % number of hyperparameters for the mean function
 hyps.hyp_lb = -10*ones(hyps.ncov_hyp  + hyps.nmean_hyp,1);
 hyps.hyp_ub = 10*ones(hyps.ncov_hyp  + hyps.nmean_hyp,1);
-model = gp_preference_model(D, meanfun, kernelfun, regularization, hyps, lb, ub, 'preference', link, modeltype, kernelname, condition);
+ns = 0;
+model = gp_preference_model(D, meanfun, kernelfun, regularization, hyps, lb, ub, 'preference', link, modeltype, kernelname, condition, ns);
  
 post = [];
 regularization = 'none';

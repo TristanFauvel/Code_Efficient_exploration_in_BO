@@ -45,7 +45,7 @@ for j = 1:nobj
         clear('xtrain', 'xtrain_norm', 'ctrain', 'score');
 
         for batch_size = batch_size_range
-            filename = [data_dir,objective,'_',acquisition_name, '_', feedback, '_', num2str(batch_size)];
+            suffix = [feedback, '_', num2str(batch_size)];
 
 
             optim  = batch_preferential_BO(g, task,identification, maxiter, nopt, ninit, update_period, hyps_update, acquisition_fun, model.D, ns, batch_size);
@@ -65,7 +65,7 @@ for j = 1:nobj
                     [xtrain{r}, xtrain_norm{r}, ctrain{r}, score{r}, xbest{r}] = optim.optimization_loop(seed, theta, model);
                 end
                  structure_name= acquisition_name;
-                save_benchmark_results(acquisition_name, structure_name, xtrain, ctrain, score, xbest, objective, data_dir, task)
+                save_benchmark_results(acquisition_name, structure_name, xtrain, ctrain, score, xbest, objective, data_dir, task, suffix)
             end
         end
     end

@@ -64,7 +64,7 @@ for j = 1:nobj
                 [xtrain{r}, ctrain{r}, score{r}, xbest{r}] = optim.optimization_loop(seed, theta, model);
             end
             structure_name= acquisition_name;
-            save_benchmark_results(acquisition_name, structure_name, xtrain, ctrain, score, xbest, objective, data_dir, task)
+            save_benchmark_results(acquisition_name, structure_name, xtrain, ctrain, score, xbest, objective, data_dir, task, [])
         end
     end
 end

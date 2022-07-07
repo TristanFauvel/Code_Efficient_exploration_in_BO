@@ -1,14 +1,8 @@
 function uncertainty(pathname)
 
 folder = [pathname, '/Figures'];
-n=100;
-
 rng(2)
 graphics_style_paper;
-
-colo= othercolor('GnBu7');
-
-link = @normcdf;
 
 
 %%

@@ -6,8 +6,6 @@ figure_folder = [pathname,'/Figures/'];
 figname =  'Figure2';
 
 load('benchmarks_table.mat')
-
-
  
 settings= load([pathname, '/Experiments_parameters.mat'],'Experiments_parameters');
 settings = settings.Experiments_parameters;
@@ -32,8 +30,9 @@ short_acq_names= char(T(any(T.acq_funs == acq_funs,2),:).short_names);
 objectives = settings.objectives{:};
 
 optim = '';
+prefix = [task, '_'];
 [t, Best_ranking, AUC_ranking,b, signobj] = ranking_analysis(data_dir, ...
-    char(acquisition_names_citation), objectives, acquisition_funs, nreplicates,maxiter, [],[], optim,'score');
+    char(acquisition_names_citation), objectives, acquisition_funs, nreplicates,maxiter, [],prefix, optim,'score');
 
 if ~isfolder(figure_folder)
     mkdir(figure_folder)

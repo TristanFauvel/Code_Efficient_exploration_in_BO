@@ -60,7 +60,7 @@ for j = 1:nobj
             structure_name= [ acquisition_name, '_e_',num2str(e)];
             structure_name = regexprep(structure_name,'\.','_dot_');
             acq = [acquisition_name, '_e=',num2str(e)];
-            save_benchmark_results(acq, structure_name, xtrain, ctrain, score, xbest, objective, data_dir, task)
+            save_benchmark_results(acq, structure_name, xtrain, ctrain, score, xbest, objective, data_dir, task, [])
         end
     end
 end

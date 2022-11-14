@@ -19,6 +19,12 @@ nreplicates = [20;60;30;60]; % Number of experiments replicates;
 
 %%
 rescaling = logical([1;1;1;1]); % Whether or not to rescale objective functions
+
+ExpName= {'BBO'; 'PBO'; 'batch_PBO'; 'sensitivity_BBO'};
+maxiter =  [10;10;10;10]; % Number of iterations
+nreplicates = [1;1;1;1]; % Number of experiments replicates;
+
+
 nopt = [5;5;5;5]; % Number of time steps before starting using acquisition functions
 ninit = [5;5;5;5]; % Number of time steps before updating hyperparameters
 update_period = maxiter+[1;1;1;1]; % Hyperparameters update frequency
